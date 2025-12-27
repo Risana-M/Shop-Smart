@@ -1,24 +1,33 @@
 
 
 import { useSelector } from "react-redux";
-   import { Link, NavLink } from "react-router-dom";
-
-
-
+import { Link, NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setSearchQuery } from "../features/searchSlice";
+import { useNavigate } from "react-router-dom";
 
 
 function Navbar() {
-   const wishlistCount = useSelector(
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const wishlistCount = useSelector(
     (state) => state.wishlist.items.length
   );
   const cartCount = useSelector(
     (state) => state.cart.items.length
   );
+
+  const searchQuery = useSelector(
+    (state) => state.search.query
+  );
+
   return (
     <>
       {/* TOP NAVBAR */}
       <nav className="bg-white shadow-md px-6 py-4 flex items-center justify-between">
-        
+
         {/* LOGO */}
         <Link to="/" className="text-2xl font-bold text-green-700">
           FreshCo 🌱
@@ -33,6 +42,13 @@ function Navbar() {
           <input
             type="text"
             placeholder="Search organic vegetables..."
+            value={searchQuery}
+            onChange={(e) => {
+              dispatch(setSearchQuery(e.target.value));
+              navigate("/products");
+
+            }}
+
             className="w-full bg-transparent outline-none ml-3 text-sm"
           />
         </div>
@@ -50,7 +66,7 @@ function Navbar() {
 
           </NavLink>
 
-          <NavLink to= "/wishlist"    className="flex flex-row items-center cursor-pointer gap-1">
+          <NavLink to="/wishlist" className="flex flex-row items-center cursor-pointer gap-1">
             <img src="https://img.icons8.com/windows/32/like--v1.png" className="w-6 h-6" />
             <span className="text-xs">Wishlist</span>({wishlistCount})
           </NavLink>
@@ -71,12 +87,13 @@ function Navbar() {
         <NavLink to="/checkout" className="hover:text-green-300">
           Checkout
         </NavLink>
-        
-        
-        
+
+
+
       </nav>
     </>
   );
 }
 
 export default Navbar;
+

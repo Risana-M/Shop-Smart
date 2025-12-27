@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import product from "../data/Product";
 
 const productSlice = createSlice({
-    name:"product",
+    name: "product",
     initialState: product,
-    reducers:{},
+    reducers: {},
 });
 
 export default productSlice.reducer;

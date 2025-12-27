@@ -1,4 +1,4 @@
-//import { FaHeart, FaStar } from "react-icons/fa";
+
 
 function ProductCard({ product }) {
   return (
@@ -20,7 +20,7 @@ function ProductCard({ product }) {
 
       <div className="flex justify-between items-center mt-3">
         <span className="font-bold text-primary">
-          ₹{product.price}
+          {product.price}
         </span>
 
         <button className="text-gray-500 hover:text-red-500">

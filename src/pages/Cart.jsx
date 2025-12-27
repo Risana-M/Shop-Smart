@@ -1,9 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  removeFromCart,
-  increaseQty,
-  decreaseQty
-} from "../features/cartSlice";
+import { removeFromCart, increaseQty, decreaseQty } from "../features/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
@@ -14,8 +10,14 @@ function Cart() {
   // Empty cart UI
   if (cart.length === 0) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center text-gray-500 text-lg">
-        🛒 Your cart is empty
+      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4">
+        <p className="text-gray-500 text-lg">🛒 Your Cart is empty</p>
+        <button
+          onClick={() => navigate("/products")}
+          className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+        >
+          Go Shopping
+        </button>
       </div>
     );
   }
@@ -76,7 +78,7 @@ function Cart() {
             {/* Remove Button */}
             <button
               onClick={() => dispatch(removeFromCart(item.id))}
-              className="px-4 py-1 border border-red-500 text-red-500 rounded hover:bg-red-500 hover:text-white"
+              className="px-4 py-1 border border-green-700 text-green-700 rounded hover:bg-green-700 hover:text-white"
             >
               Remove
             </button>
@@ -95,6 +97,13 @@ function Cart() {
           className="px-6 py-2 bg-green-700 text-white rounded hover:bg-green-800"
         >
           Proceed to Checkout
+        </button>
+
+        <button
+          onClick={() => navigate("/products")}
+          className="px-6 py-2 bg-green-700 text-white rounded hover:bg-green-800"
+        >
+          Back
         </button>
       </div>
     </div>

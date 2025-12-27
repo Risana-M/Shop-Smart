@@ -1,140 +1,116 @@
 
 
-
-
-
-
-
 function Sidebar({
-  selectedCategories = [],
-  setSelectedCategories = () => {},
-  selectedRating = null,
-  setSelectedRating = () => {},
-  priceRange = 200,
-  setPriceRange = () => {},
-  selectedTags = [],
-  setSelectedTags = () => {},
+  selectedCategories = [], // Add '= []' here
+  setSelectedCategories,
+  selectedRating,
+  setSelectedRating,
+  priceRange,
+  setPriceRange,
+  selectedTags = [],      // Add '= []' here
+  setSelectedTags,
 }) {
-  const categories = [
-    "Vegetables",
-    "Fruits",
-    "Leafy Greens",
-    "Fresh Herbs",
-    "Seasonal Veggies",
-    "Organic Fruits",
-    "Root Veggies",
-  ];
+  const categories = ["Vegetables", "Fruits", "Leafy Greens", "Fresh Herbs", "Root Veggies"];
+  const tags = ["Organic", "Farm Fresh", "Seasonal", "Best Seller"];
 
-  const tags = [
-    "Organic",
-    "Farm Fresh",
-    "Seasonal",
-    "Best Seller",
-    "Chemical Free",
-  ];
+  const handleClear = () => {
+    setSelectedCategories([]);
+    setSelectedRating(null);
+    setPriceRange(1000);
+    setSelectedTags([]);
+  };
 
   const toggleCategory = (cat) => {
-    setSelectedCategories(
-      selectedCategories.includes(cat)
-        ? selectedCategories.filter((c) => c !== cat)
-        : [...selectedCategories, cat]
+    setSelectedCategories(prev =>
+      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
     );
   };
 
   const toggleTag = (tag) => {
-    setSelectedTags(
-      selectedTags.includes(tag)
-        ? selectedTags.filter((t) => t !== tag)
-        : [...selectedTags, tag]
+    setSelectedTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
     );
   };
 
   return (
-    <aside className="w-72 bg-white p-5 rounded-lg shadow-sm mt-4 text-sm">
-
-      {/* FILTER HEADER */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="font-semibold text-lg">Filters</h2>
-        <button className="text-green-600 text-sm hover:underline">
-          Clear
+    <aside className="w-full md:w-64 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-4">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="font-bold text-xl text-gray-800">Filters</h2>
+        <button onClick={handleClear} className="text-green-600 text-sm font-medium hover:text-green-700 transition">
+          ClearAll
         </button>
       </div>
 
       {/* CATEGORY */}
-      <div className="border-b pb-4 mb-4">
-        <h3 className="font-semibold mb-3">All Categories</h3>
-        <div className="space-y-2">
+      <div className="mb-8">
+        <h3 className="font-semibold text-gray-700 mb-4">Categories</h3>
+        <div className="space-y-3">
           {categories.map((cat) => (
-            <label
-              key={cat}
-              className="flex items-center justify-between cursor-pointer"
-            >
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={selectedCategories.includes(cat)}
-                  onChange={() => toggleCategory(cat)}
-                  className="accent-green-600"
-                />
-                <span>{cat}</span>
-              </div>
-              <span className="text-gray-400 text-xs">(12)</span>
+            <label key={cat} className="flex items-center gap-3 cursor-pointer group">
+
+              <input
+                type="checkbox"
+                // The '?.' is the Optional Chaining operator. It prevents crashes!
+                className="w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500 accent-green-600 cursor-pointer"
+                checked={selectedCategories?.includes(cat)}
+                onChange={() => toggleCategory(cat)}
+              />
+              <span className="text-gray-600 group-hover:text-green-600 transition text-sm">{cat}</span>
             </label>
           ))}
         </div>
       </div>
 
       {/* PRICE */}
-      <div className="border-b pb-4 mb-4">
-        <h3 className="font-semibold mb-2">Price</h3>
+      <div className="mb-8">
+        <h3 className="font-semibold text-gray-700 mb-2">Max Price</h3>
         <input
           type="range"
           min="10"
-          max="200"
+          max="1000"
+          step="10"
           value={priceRange}
           onChange={(e) => setPriceRange(Number(e.target.value))}
-          className="w-full accent-green-600"
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-600"
         />
-        <div className="flex justify-between text-gray-500 text-xs mt-1">
+        <div className="flex justify-between mt-2 text-sm font-bold text-gray-500">
           <span>₹10</span>
-          <span>₹{priceRange}</span>
+          <span className="text-green-700 bg-green-50 px-2 rounded">₹{priceRange}</span>
         </div>
       </div>
 
       {/* RATING */}
-      <div className="border-b pb-4 mb-4">
-        <h3 className="font-semibold mb-2">Rating</h3>
-        <div className="space-y-2">
+      <div className="mb-8">
+        <h3 className="font-semibold text-gray-700 mb-4">Min Rating</h3>
+        <div className="space-y-3">
           {[5, 4, 3].map((r) => (
-            <label key={r} className="flex items-center gap-2">
+            <label key={r} className="flex items-center gap-3 cursor-pointer group">
               <input
                 type="radio"
+                name="rating"
                 checked={selectedRating === r}
                 onChange={() => setSelectedRating(r)}
-                className="accent-green-600"
+                className="w-4 h-4 border-gray-300 text-green-600 focus:ring-green-500 accent-green-600"
               />
-              <span className="text-yellow-500">
-                {"⭐".repeat(r)}
+              <span className="flex items-center text-sm text-gray-600">
+                {r} <span className="text-yellow-400 ml-1">★</span> <span className="ml-1 text-gray-400">& up</span>
               </span>
-              <span className="text-gray-400 text-xs">& up</span>
             </label>
           ))}
         </div>
       </div>
 
       {/* TAGS */}
-      <div className="border-b pb-4 mb-4">
-        <h3 className="font-semibold mb-3">Popular Tags</h3>
+      <div>
+        <h3 className="font-semibold text-gray-700 mb-4">Popular Tags</h3>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <button
               key={tag}
               onClick={() => toggleTag(tag)}
-              className={`px-3 py-1 rounded-full border text-xs transition
-                ${
-                  selectedTags.includes(tag)
-                    ? "bg-green-600 text-white border-green-600"
-                    : "hover:bg-green-100 text-gray-600"
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${selectedTags.includes(tag)
+                  ? "bg-green-600 text-white shadow-md shadow-green-200"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
             >
               {tag}
@@ -142,28 +118,8 @@ function Sidebar({
           ))}
         </div>
       </div>
-
-      {/* OFFER BANNER IMAGE */}
-      {/* <div className="mb-4">
-        <img
-          src="src/assets/sidebar/offer-banner.jpg.avif"
-          alt="Offer"
-          className=" w-full cursor-pointer hover:opacity-90 transition"
-        />
-      </div> */}
-
-      {/* SMALL PROMO IMAGE */}
-      {/* <div>
-        <img
-          src="src/assets/sidebar/promo-small.jpg.jpg"
-          alt="Promo"
-          className=" w-full cursor-pointer hover:opacity-90 transition"
-        />
-      </div>  */}
-
     </aside>
   );
 }
 
 export default Sidebar;
-

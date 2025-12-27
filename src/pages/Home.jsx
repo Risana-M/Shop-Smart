@@ -14,7 +14,8 @@ function Home() {
       {/* HERO BANNER */}
       <section className="my-3 mx-4 w-[98%] h-[40vh] md:h-[60vh] bg-white rounded-md overflow-hidden relative">
         <img
-          src="https://img.pikbest.com/backgrounds/20241223/a-basket-of-vegetables-and-fruits-on-a-table-with-green-background_11290096.jpg!bw700"
+          src="src/assets/banner/freshco banner.jpg"
+          //src="https://img.pikbest.com/backgrounds/20241223/a-basket-of-vegetables-and-fruits-on-a-table-with-green-background_11290096.jpg!bw700"
           alt="Farm Fresh Banner"
           className="w-full h-full object-cover"
         />
@@ -30,7 +31,7 @@ function Home() {
           </p>
 
           <Link to="/products">
-            <button className="bg-green-600 px-6 py-3 rounded-md font-semibold">
+            <button className="bg-green-600 px-6 py-3 rounded-md font-semibold hover:bg-green-500 hover:scale-110">
               Shop Now
             </button>
           </Link>
@@ -57,6 +58,7 @@ function Home() {
 
         <div className="w-[15%] hidden md:block">
           <img
+
             src="https://cdn.create.vista.com/downloads/aea8f36b-cd15-4e5b-9733-4d9b563840d5_1024.jpeg"
             alt="Offer"
             className="w-full h-full object-cover rounded-md"

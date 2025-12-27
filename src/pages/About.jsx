@@ -9,7 +9,7 @@ function About() {
           About FreshCo 🌱
         </h1>
 
-        
+
 
         {/* Description */}
         <p className="text-gray-700 text-lg leading-relaxed mb-6">
@@ -23,16 +23,16 @@ function About() {
         <p className="text-gray-700 text-lg leading-relaxed mb-12">
           Our mission is to promote healthier lifestyles by making organic food
           accessible and affordable for everyone. From daily essentials to
-          seasonal produce, FarmFresh ensures fair pricing, premium quality,
+          seasonal produce, FreshCo ensures fair pricing, premium quality,
           and timely delivery—supporting both farmers and conscious consumers.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-8">
-          At FarmFresh, we believe that healthy living begins with mindful
+          At FreshCo, we believe that healthy living begins with mindful
           food choices. By choosing organic and locally grown produce,
           you are not only investing in your health but also supporting
           sustainable agriculture and a greener future.
         </p>
-        
+
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -53,6 +53,7 @@ function About() {
           {/* Always Fresh */}
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
             {/* <div className="text-4xl mb-4">🥬</div> */}
+            <div className="text-4xl mb-4"><img className="w-9 h-9 flex mx-auto items-center justify-center" src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/50/external-lettuce-fruits-and-vegetables-wanicon-lineal-color-wanicon.png" /></div>
             <h3 className="text-xl font-semibold text-green-800 mb-2">
               Always Fresh
             </h3>
@@ -65,6 +66,7 @@ function About() {
           {/* Premium Quality */}
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
             {/* <div className="text-4xl mb-4">⭐</div> */}
+            <div className="text-4xl mb-4"><img className="w-9 h-9 flex mx-auto items-center justify-center" src="https://img.icons8.com/arcade/50/star.png" /></div>
             <h3 className="text-xl font-semibold text-green-800 mb-2">
               Premium Quality
             </h3>
@@ -75,7 +77,7 @@ function About() {
           </div>
 
         </div>
-        
+
 
       </div>
     </section>

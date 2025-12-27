@@ -1,14 +1,11 @@
+
+
+
+
 import { useNavigate } from "react-router-dom";
 
 function ProductQuickView({ product, onClose }) {
   const navigate = useNavigate();
-
-//   const handleBuyNow = () => {
-//     onClose();
-//     navigate("/checkout", {
-//       state: { product }, // ✅ send product
-//     });
-//   };
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
@@ -20,32 +17,27 @@ function ProductQuickView({ product, onClose }) {
           ✕
         </button>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 items-center"> {/* added items-center to align columns vertically */}
           <img
             src={product.image}
-            alt={product.name}
+            alt={product.name || product.title}
             className="w-full h-64 object-contain"
           />
 
-          <div>
+          {/* This div controls the right column content */}
+          <div className="flex flex-col items-center text-center">
             <h2 className="text-2xl font-bold mb-2">
-              {product.name}
+              {product.name || product.title}
             </h2>
 
             <p className="text-green-700 font-bold text-xl mb-2">
-              ₹{product.price}
+              {product.price}
             </p>
 
-            <p className="text-yellow-500 mb-4">
-              ⭐ {product.rating}
+            {/* --- CENTERED DESCRIPTION --- */}
+            <p className="text-gray-500 text-sm leading-relaxed">
+              {product.description}
             </p>
-
-            {/* <button
-              onClick={handleBuyNow}
-              className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700"
-            >
-              Buy Now
-            </button> */}
           </div>
         </div>
       </div>
@@ -54,7 +46,3 @@ function ProductQuickView({ product, onClose }) {
 }
 
 export default ProductQuickView;
-
-
-
-
