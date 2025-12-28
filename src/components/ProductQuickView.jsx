@@ -1,10 +1,10 @@
 
-
+//product modal in the homepage
 
 
 import { useNavigate } from "react-router-dom";
 
-function ProductQuickView({ product, onClose }) {
+function ProductQuickView({ product, onClose }) { // PROPS: 'product' the data to show and 'onClose' the function to hide this popup
   const navigate = useNavigate();
 
   return (

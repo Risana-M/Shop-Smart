@@ -9,7 +9,7 @@ function Contact() {
     });
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();// Stops the page from refreshing
         console.log("Form Submitted:", formData);
         alert("Thank you! Your message has been sent to FreshCo.");
         setFormData({ name: "", email: "", subject: "", message: "" });

@@ -9,21 +9,21 @@ function Checkout() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 🟢 Buy Now product (if exists)
+  //  Buy Now product (if exists)
   const buyNowProduct = location.state?.product;
-
+//Tracks if the user has clicked "Save Address"
   const [addressSaved, setAddressSaved] = useState(false);
 
-  // 🧠 Decide what to show
+  //  Decide what to show
   const checkoutItems = buyNowProduct
-    ? [{ ...buyNowProduct, quantity: 1 }]
-    : cart;
-
+    ? [{ ...buyNowProduct, quantity: 1 }] // Temporary array for single item
+    : cart;// Use the global Redux cart
+// Calculate total price for whatever items are being checked out
   const total = checkoutItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-
+// Early return if there is nothing to buy
   if (checkoutItems.length === 0) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
@@ -100,7 +100,7 @@ function Checkout() {
                   ₹{item.price * item.quantity}
                 </p>
               </div>
-
+{/* Only show "Remove" if they are checking out the cart, not a "Buy Now" */}
               {!buyNowProduct && (
                 <button
                   onClick={() => dispatch(removeFromCart(item.id))}

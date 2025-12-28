@@ -61,7 +61,7 @@ function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="border-t border-green-700 text-center py-4 text-sm text-green-300">
+      <div className="border-t border-green-700 text-center py-4 text-sm text-green-300"> {/* Dynamic Year: Automatically updates to the current year */}
         © {new Date().getFullYear()} FreshCo. All rights reserved.
       </div>
     </footer>

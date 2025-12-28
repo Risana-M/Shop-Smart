@@ -8,9 +8,10 @@ function Mainlayout() {
   return (
     <>
       <Navbar />
-
-      <main className="min-h-[80vh]">
-        <Outlet />
+<main className="max-w-[1440px] mx-auto w-full px-2 md:px-6">
+      {/* <main className="min-h-[80vh]"> */}
+        <Outlet />{/*This is where your child routes (Home, Products, Cart, etc.) 
+           will be rendered */}
       </main>
 
       <Footer />

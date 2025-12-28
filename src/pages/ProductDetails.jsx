@@ -9,10 +9,10 @@ function ProductDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const product = products.find(
+  const product = products.find(//Find the product that matches the URL ID
     (p) => p.id === Number(id)
   );
-
+//If  types a wrong ID in the URL
   if (!product) {
     return (
       <div className="p-6 text-center text-gray-500">

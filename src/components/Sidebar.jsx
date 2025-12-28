@@ -1,6 +1,7 @@
 
 
 function Sidebar({
+  //  DEFAULT PARAMETERS:  set this ' = [] ' to prevent errors if the parent forgets to send these
   selectedCategories = [], // Add '= []' here
   setSelectedCategories,
   selectedRating,
@@ -10,16 +11,17 @@ function Sidebar({
   selectedTags = [],      // Add '= []' here
   setSelectedTags,
 }) {
+  // Static arrays used to generate the UI elements
   const categories = ["Vegetables", "Fruits", "Leafy Greens", "Fresh Herbs", "Root Veggies"];
   const tags = ["Organic", "Farm Fresh", "Seasonal", "Best Seller"];
-
+// RESET LOGIC: Returns all filter states to their starting values
   const handleClear = () => {
     setSelectedCategories([]);
     setSelectedRating(null);
     setPriceRange(1000);
     setSelectedTags([]);
   };
-
+// TOGGLE LOGIC: If item exists in array, remove it; if not, add it.
   const toggleCategory = (cat) => {
     setSelectedCategories(prev =>
       prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]

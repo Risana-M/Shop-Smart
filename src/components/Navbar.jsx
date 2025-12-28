@@ -1,27 +1,20 @@
 
 
-import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setSearchQuery } from "../features/searchSlice";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";//redux hook to read data
+import { Link, NavLink } from "react-router-dom";// rourt hook that add 'active' class to links
+import { useDispatch } from "react-redux";//redux hook to send actions and for update
+import { setSearchQuery } from "../features/searchSlice";// action, The specific function that updates  search state
+import { useNavigate } from "react-router-dom";// router hook 
 
 
 function Navbar() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const wishlistCount = useSelector(
-    (state) => state.wishlist.items.length
-  );
-  const cartCount = useSelector(
-    (state) => state.cart.items.length
-  );
-
-  const searchQuery = useSelector(
-    (state) => state.search.query
-  );
+// SELECTORS: Extracting specific numbers from the global Redux store
+  const wishlistCount = useSelector( (state) => state.wishlist.items.length);
+  const cartCount = useSelector((state) => state.cart.items.length);
+  const searchQuery = useSelector( (state) => state.search.query );
 
   return (
     <>

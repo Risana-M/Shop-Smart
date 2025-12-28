@@ -6,10 +6,13 @@ const wishlistSlice = createSlice({
     items: []
   },
   reducers: {
+    //Only adds the item if it's not already there
     addToWishlist: (state, action) => {
+      // Check if the item already exists using its ID
       const exists = state.items.find(
         (item) => item.id === action.payload.id
       );
+      // If it DOESN'T exist (!exists), push the new product object to the array
       if (!exists) {
         state.items.push(action.payload);
       }

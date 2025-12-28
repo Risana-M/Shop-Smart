@@ -10,7 +10,7 @@ function Cart() {
   // Empty cart UI
   if (cart.length === 0) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4">
+      <div className="min-h-[60vh] flex flex-col sm:flex-row items-center justify-center gap-4">
         <p className="text-gray-500 text-lg">🛒 Your Cart is empty</p>
         <button
           onClick={() => navigate("/products")}
@@ -21,7 +21,8 @@ function Cart() {
       </div>
     );
   }
-
+// DERIVED STATE: Calculating the total price based on items currently in Redux
+  // .reduce() loops through the cart and adds up (price * quantity) for every item
   const total = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -29,13 +30,14 @@ function Cart() {
 
   return (
     <div className="p-6 space-y-4">
+      {/*  LIST RENDERING: Mapping through the cart array to create a row for each item */}
       {cart.map((item) => (
         <div
           key={item.id}
           className="flex items-center bg-white rounded-lg shadow p-4"
         >
           {/* LEFT: Image + Name */}
-          <div className="flex items-center gap-4 w-1/3">
+          <div className="flex items-center gap-4 w-full sm:w-1/2">
             <img
               src={item.image}
               alt={item.name}
@@ -48,11 +50,12 @@ function Cart() {
           </div>
 
           {/* CENTER: Price */}
-          <div className="w-1/3 text-center font-semibold text-green-700">
+          <div className="w-full sm:w-1/4 text-left sm:text-centertext-center font-semibold text-green-700">
             ₹{item.price * item.quantity}
           </div>
 
           {/* RIGHT: Quantity + Remove */}
+          
           <div className="w-1/3 flex justify-end items-center gap-4">
             {/* Quantity Controls */}
             <div className="flex items-center border rounded">

@@ -12,7 +12,7 @@ function Wishlist() {
 
   if (wishlist.length === 0) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4">
+      <div className="min-h-[60vh] flex flex-col md:flex-row items-center justify-center gap-4">
         <p className="text-gray-500 text-lg">♥️Your wishlist is empty</p>
         <button
           onClick={() => navigate("/products")}
