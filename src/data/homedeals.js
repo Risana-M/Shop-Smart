@@ -37,7 +37,7 @@ const homeDeals = [
     image: "https://thumbs.dreamstime.com/b/onion-farming-most-main-food-our-kitchen-india-other-country-farmer-removing-onion-indian-farmer-wearing-168912875.jpg"
   },
   {
-    id: 6, // Changed ID from 5 to 6
+    id: 6, 
     title: "Fresh Beetroots",
     price: "From ₹55/kg",
     description: "Deep ruby-red beetroots with a sweet, earthy flavor. Excellent for boosting hemoglobin and adding color to your healthy salads.",

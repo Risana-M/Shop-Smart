@@ -15,7 +15,7 @@ function Products() {
   const wishlist = useSelector((state) => state.wishlist.items);
   const searchQuery = useSelector((state) => state.search.query);
 
-  // 1. FILTER STATES
+  //  FILTER STATES
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedRating, setSelectedRating] = useState(null);
   const [priceRange, setPriceRange] = useState(1000); // Increased max default
@@ -24,7 +24,7 @@ function Products() {
 
   const isInWishlist = (id) => wishlist.some((item) => item.id === id);
 
-  // 2. FILTERING LOGIC
+  //  FILTERING LOGIC
   const filteredProducts = productsData.filter((item) => {
     // Search Filter
     if (
@@ -58,7 +58,7 @@ function Products() {
     return true;
   });
 
-  // 3. SORTING LOGIC
+  //  SORTING LOGIC
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortBy) {
       case "price-low": return a.price - b.price;
@@ -126,7 +126,7 @@ function Products() {
                 key={item.id}
                 className="group relative bg-white p-4 border border-gray-100 rounded-xl shadow-sm hover:shadow-xl hover:border-green-400 transition-all duration-300"
               >
-                {/* ❤️ Wishlist */}
+                {/*  Wishlist */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -146,7 +146,7 @@ function Products() {
                   </span>
                 </button>
 
-                {/* 🔍 CLICKABLE AREA */}
+                {/*  CLICKABLE AREA */}
                 <div
                   onClick={() => navigate(`/product/${item.id}`)}
                   className="cursor-pointer"
@@ -175,7 +175,7 @@ function Products() {
                 </div>
 
 
-                {/* 🛒 ADD TO CART */}
+                {/*  ADD TO CART */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();

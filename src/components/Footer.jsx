@@ -1,6 +1,6 @@
 
 
-import { Link } from "react-router-dom"; // 1. Import Link
+import { Link } from "react-router-dom"; 
 
 function Footer() {
   return (
@@ -19,7 +19,7 @@ function Footer() {
         <div>
           <h3 className="font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm text-green-200">
-            {/* 2. Wrap list items with Link component */}
+            {/*  Wrap list items with Link component */}
             <li>
               <Link to="/" className="hover:text-white transition">Home</Link>
             </li>
@@ -49,7 +49,7 @@ function Footer() {
         {/* CONTACT */}
         <div>
           <h3 className="font-semibold mb-3">Contact</h3>
-          {/* 3. Also make the email clickable to navigate to contact page */}
+          {/*  Also make the email clickable to navigate to contact page */}
           <p className="text-sm text-green-200 leading-relaxed">
             📍 Kerala <br />
             <Link to="/contact" className="hover:text-white underline decoration-green-700">

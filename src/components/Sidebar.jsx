@@ -2,13 +2,13 @@
 
 function Sidebar({
   //  DEFAULT PARAMETERS:  set this ' = [] ' to prevent errors if the parent forgets to send these
-  selectedCategories = [], // Add '= []' here
+  selectedCategories = [], 
   setSelectedCategories,
   selectedRating,
   setSelectedRating,
   priceRange,
   setPriceRange,
-  selectedTags = [],      // Add '= []' here
+  selectedTags = [],      
   setSelectedTags,
 }) {
   // Static arrays used to generate the UI elements

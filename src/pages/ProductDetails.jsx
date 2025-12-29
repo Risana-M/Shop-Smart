@@ -30,7 +30,7 @@ function ProductDetails() {
   return (
     <section className="p-6 space-y-10">
 
-      {/* 🟢 MAIN PRODUCT CARD */}
+      {/*  MAIN PRODUCT CARD */}
       <div className="bg-white rounded-lg shadow p-6 grid md:grid-cols-2 gap-6">
 
         <img
@@ -76,7 +76,7 @@ function ProductDetails() {
         </div>
       </div>
 
-      {/* 🟢 RELATED PRODUCTS */}
+      {/* RELATED PRODUCTS */}
       <div>
         <h2 className="text-xl font-semibold mb-4">
           Related Products

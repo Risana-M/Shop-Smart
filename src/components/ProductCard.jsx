@@ -14,7 +14,7 @@ function ProductCard({ product }) {
       <p className="text-sm text-gray-600">{product.category}</p>
 
       <div className="flex items-center gap-1 mt-1">
-        {/* <FaStar className="text-yellow-400" /> */}
+      
         <span className="text-sm">{product.rating}</span>
       </div>
 
@@ -24,7 +24,7 @@ function ProductCard({ product }) {
         </span>
 
         <button className="text-gray-500 hover:text-red-500">
-          {/* <FaHeart /> */}
+        
         </button>
       </div>
 

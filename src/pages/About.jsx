@@ -39,7 +39,7 @@ function About() {
 
           {/* Free Delivery */}
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            {/* <div className="text-4xl mb-4">🚚</div> */}
+         
             <div className="text-4xl mb-4"><img className="w-9 h-9 flex mx-auto items-center justify-center" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-delivery-van-postal-service-flaticons-flat-flat-icons-2.png" /></div>
             <h3 className="text-xl font-semibold text-green-800 mb-2">
               Free Delivery
@@ -52,7 +52,7 @@ function About() {
 
           {/* Always Fresh */}
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            {/* <div className="text-4xl mb-4">🥬</div> */}
+          
             <div className="text-4xl mb-4"><img className="w-9 h-9 flex mx-auto items-center justify-center" src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/50/external-lettuce-fruits-and-vegetables-wanicon-lineal-color-wanicon.png" /></div>
             <h3 className="text-xl font-semibold text-green-800 mb-2">
               Always Fresh
@@ -65,7 +65,7 @@ function About() {
 
           {/* Premium Quality */}
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            {/* <div className="text-4xl mb-4">⭐</div> */}
+          
             <div className="text-4xl mb-4"><img className="w-9 h-9 flex mx-auto items-center justify-center" src="https://img.icons8.com/arcade/50/star.png" /></div>
             <h3 className="text-xl font-semibold text-green-800 mb-2">
               Premium Quality

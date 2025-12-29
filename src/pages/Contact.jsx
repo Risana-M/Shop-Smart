@@ -42,7 +42,7 @@ function Contact() {
                             className="w-full border-2 border-gray-100 rounded-lg px-4 py-2 focus:border-green-500 focus:outline-none transition"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            placeholder="John Doe"
+                            placeholder="Ann lia"
                         />
                     </div>
 
@@ -54,7 +54,7 @@ function Contact() {
                             className="w-full border-2 border-gray-100 rounded-lg px-4 py-2 focus:border-green-500 focus:outline-none transition"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="john@example.com"
+                            placeholder="annlia@example.com"
                         />
                     </div>
 

@@ -14,8 +14,8 @@ function Home() {
       {/* HERO BANNER */}
       <section className="my-3 mx-4 w-[98%] h-[40vh] md:h-[60vh] bg-white rounded-md overflow-hidden relative">
         <img
-          src="src/assets/banner/freshco banner.jpg"
-          //src="https://img.pikbest.com/backgrounds/20241223/a-basket-of-vegetables-and-fruits-on-a-table-with-green-background_11290096.jpg!bw700"
+          //src="src/assets/banner/freshco banner.jpg"
+          src="https://img.pikbest.com/backgrounds/20241223/a-basket-of-vegetables-and-fruits-on-a-table-with-green-background_11290096.jpg!bw700"
           alt="Farm Fresh Banner"
           className="w-full h-full object-cover"
         />
