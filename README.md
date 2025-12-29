@@ -82,11 +82,11 @@ Admin Dashboard: To add/edit product stock in real-time.
  Author-->
 Fathimathul Risana M
 
-GitHub: [@yourusername]
+GitHub: [https://github.com/Risana-M]
 
-LinkedIn: [Your Profile]
+LinkedIn: [www.linkedin.com/in/fathimathul-risana-m]
 
-Email: 
+Email: [siyammm74@gmail.com]
 
  License-->
 This project is available under the MIT License.
