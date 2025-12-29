@@ -55,7 +55,7 @@ function Footer() {
             <Link to="/contact" className="hover:text-white underline decoration-green-700">
               support@freshco.com
             </Link> <br />
-            📞 +91 98765 43210
+            📞 +91 00000 00000
           </p>
         </div>
       </div>
