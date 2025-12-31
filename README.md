@@ -1,5 +1,5 @@
  Live Demo-->
-[https://your-freshco-link.vercel.app]
+[https://shop-smart-qidtbpegw-risana-s-projects.vercel.app]
 
  Description-->
 FreshCo is a modern e-commerce platform dedicated to bringing organic, farm-fresh vegetables and fruits directly to consumers. The application features a seamless shopping experience with real-time filtering, a persistent wishlist, and a responsive shopping cart.
